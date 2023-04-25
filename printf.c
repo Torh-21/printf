@@ -1,19 +1,17 @@
 #include "main.h"
 /**
  * _printf - produces output according to a format
- *
- * @format: format specifier argument
- *
- * Return: 0 (success)
+ *@format: string argument
+ * Return: character count
  */
 int _printf(const char *format, ...)
 {
 	char *str;
-	int i, str_count;
+	int i, char_count;
 	va_list input;
 
+	char_count = 0;
 	va_start(input, format);
-	str_count = 0;
 
 	for (i = 0; format[i]; i++)
 	{
@@ -27,11 +25,7 @@ int _printf(const char *format, ...)
 			else if (format[i + 1] == 's')
 			{
 				str = va_arg(input, char *);
-				while (str[str_count] != '\0')
-				{
-					custom_putchar(str[str_count]);
-					str_count++;
-				}
+				custom_puts(str);
 				i++;
 			}
 			else if (format[i + 1] == '%')
@@ -39,13 +33,15 @@ int _printf(const char *format, ...)
 				custom_putchar('%');
 				i++;
 			}
+			char_count++;
 		}
 		else
 		{
 			custom_putchar(format[i]);
+			char_count++;
 		}
 	}
 
 	va_end(input);
-	return (0);
+	return (char_count);
 }
