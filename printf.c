@@ -12,11 +12,8 @@ int _printf(const char *format, ...)
 
 	char_count = 0;
 	va_start(input, format);
-
 	if (format == NULL)
-	{
 		return (-1);
-	}
 
 	for (i = 0; format[i]; i++)
 	{
