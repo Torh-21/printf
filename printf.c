@@ -1,7 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdarg.h>
 /**
  * _printf - produces output according to a format
  *
@@ -12,13 +9,13 @@
 int _printf(const char *format, ...)
 {
 	char *str;
-	int str_count;
+	int i, str_count;
 	va_list input;
 
 	va_start(input, format);
 	str_count = 0;
 
-	for (int i = 0; format[i]; i++)
+	for (i = 0; format[i]; i++)
 	{
 		if (format[i] == '%')
 		{
