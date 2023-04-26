@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 				custom_putchar('%');
 				i++;
 			}
-			else if (format[i + 1] == 'd' || format[i + 1] == 'i') //you are adding from here
+			else if (format[i + 1] == 'd' || format[i + 1] == 'i')
 			{
 				y = va_arg(input, int);
 				if (y < 0)
