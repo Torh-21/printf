@@ -35,6 +35,17 @@ int _printf(const char *format, ...)
 				custom_putchar('%');
 				i++;
 			}
+			else if (format[i + 1] == 'd' || format[i + 1] == 'i') //you are adding from here
+			{
+				y = va_arg(input, int);
+				if (y < 0)
+				{
+					custom_putchar('-');
+					y = -y;
+				}
+				char_count += print_integer(y);
+				i++;
+			}
 			else
 			{
 				return (-1);
