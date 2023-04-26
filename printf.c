@@ -35,6 +35,10 @@ int _printf(const char *format, ...)
 				custom_putchar('%');
 				i++;
 			}
+			else
+			{
+				return (-1);
+			}
 			char_count++;
 		}
 		else
