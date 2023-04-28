@@ -11,6 +11,7 @@ typedef struct formats
 } check_format;
 
 int custom_putchar(char c);
+int _putchar(va_list args);
 int custom_puts(char *str);
 int print_integer(int a);
 int print_binary(va_list input);
